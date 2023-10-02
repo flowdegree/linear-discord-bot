@@ -1,5 +1,5 @@
-import { IncomingLinearWebhookPayload, IssueCache } from "src/types"
-import { POST, getId, getPriorityValue } from "src/services/utils"
+import { IncomingLinearWebhookPayload, IssueCache } from "../types"
+import { POST, getId, getPriorityValue } from "./utils"
 
 export namespace Issue {
 

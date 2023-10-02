@@ -1,6 +1,6 @@
 import axios from "axios";
 import { IncomingLinearWebhookPayload } from '../types';
-import { env } from "src/config";
+import { env } from "../config";
 
 export function POST(body: Record<string, any>, url: string = env.DISCORD_WEBHOOK_URL!) {
   return axios.post(url, body)
