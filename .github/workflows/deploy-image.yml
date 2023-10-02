@@ -1,27 +1,50 @@
 name: Create and publish a Docker image
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
-    branches:
-      - master
   pull_request:
-    branches:
-      - main
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+    
   
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  check_changes:
+    runs-on: ubuntu-latest
+    outputs:
+      ansible_changed: ${{ steps.check_changes.outputs.skip_job }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 2  # this fetches 2 commits, so HEAD^ will exist
+    
+    - name: Check if changes are only in md files
+      id: check_changes
+      run: |
+        git diff --name-only HEAD^ HEAD > changed_files.txt
+        if ! grep -qv '.*\.md' changed_files.txt; then
+          echo "Only MD files changed, skipping job."
+          echo "skip_job=true" >> $GITHUB_ENV
+          echo "::set-output name=skip_job::true"
+        else
+          echo "Other files changed, running job."
+          echo "skip_job=false" >> $GITHUB_ENV
+          echo "::set-output name=skip_job::false"
+        fi
+
+
   build-and-push-image:
+    if: ${{ needs.check_changes.outputs.skip_job != 'true' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
-    
     steps:        
       - name: Checkout repo
         uses: actions/checkout@v3

@@ -34,6 +34,7 @@ You will need to put your own [Discord webhook](https://support.discord.com/hc/e
 ## Author
 
 - **Mohannad F. Otaibi** - [Site](https://mohannadotaibi.com/) | [Twitter](https://twitter.com/bufai7an)
+- **Sonny Mo** - [Site](https://sonnymo.me/) | [GitHub](https://github.com/sonny3690)
 
 Special thanks to the original authors:
 
