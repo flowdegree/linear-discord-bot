@@ -6,7 +6,4 @@ services:
     image: "ghcr.io/flowdegree/linear-discord-bot"
     ports:
     - "${EXTERNAL_SERVER_PORT}:${PORT}"
-    environment:
-      - DISCORD_WEBHOOK_URL
-      - PORT
-      - TZ
+    env_file: "stack.env"
