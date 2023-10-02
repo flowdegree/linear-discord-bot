@@ -1,6 +1,6 @@
-![Linear App Webhooks](https://cdn.sanity.io/images/ornj730p/production/240a680cf76a0364465aaa0c901aebce5fda2bea-1536x957.png)
-
 # Linear App Discord
+
+![Linear App Webhooks](https://cdn.sanity.io/images/ornj730p/production/240a680cf76a0364465aaa0c901aebce5fda2bea-1536x957.png)
 
 Listener for Linear App new issue events connected to Discord.
 
@@ -8,7 +8,12 @@ This is a simple express server utilizing Linear's built in webhook usage to mon
 
 ## Setup / Deployment
 
-You will need to put your own [Discord webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) into the configuration file. For deployment, setup a [Heroku](https://www.heroku.com/) account and follow this [simple tutorial](https://www.youtube.com/watch?v=MxfxiR8TVNU&t=310s).
+You will need to put your own [Discord webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) into the configuration file.
+
+**For deployment, either:**
+
+- setup a [Heroku](https://www.heroku.com/) account and follow this [simple tutorial](https://www.youtube.com/watch?v=MxfxiR8TVNU&t=310s).
+- Or, run the docker image
 
 ## Helpful Resources
 
@@ -21,11 +26,16 @@ You will need to put your own [Discord webhook](https://support.discord.com/hc/e
 ## Built With
 
 - [Node.js](https://nodejs.org/en/) - JavaScript runtime environment
-- [NPM](https://www.npmjs.com/) - Node package manager
+- [PNPM](https://pnpm.js.org/) - Node package manager
 - [Express](https://www.npmjs.com/package/express) - Web framework
 - [Webhook Discord](https://www.npmjs.com/package/webhook-discord) - Easy hook sending
+- [Typescript](https://www.typescriptlang.org/) - Typed JavaScript
 
 ## Author
+
+- **Mohannad F. Otaibi** - [Site](https://mohannadotaibi.com/) | [Twitter](https://twitter.com/bufai7an)
+
+Special thanks to the original authors:
 
 - **Ethan Zoller** - [Site](https://www.ethanzoller.com/) | [Twitter](https://twitter.com/ethanzolla)
 - **Alistair Smith** - [Site](https://alistair.cloud/) | [Twitter](https://twitter.com/aabbccsmith)
