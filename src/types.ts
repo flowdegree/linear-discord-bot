@@ -19,7 +19,7 @@ export interface Data {
   description?: string;
   documentVersion?: number;
   priority?: number;
-  estimate: any;
+  estimate?: any;
   boardOrder?: number;
   startedAt: any;
   completedAt: any;
