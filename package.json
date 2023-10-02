@@ -4,8 +4,9 @@
   "description": "Listen for Linear App events and updates with Discord.",
   "main": "dist/index.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "build": "tsc"
+    "dev": "ts-node src/index.ts",
+    "build": "pnpm run clean && tsup src/index.ts",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -33,18 +34,17 @@
   },
   "homepage": "https://github.com/flowdegree/linear-app-discord#readme",
   "dependencies": {
-    "dotenv": "^8.6.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "node-fetch": "^2.7.0",
-    "util": "^0.12.5",
-    "webhook-discord": "^3.7.8"
+    "node-fetch": "^3.3.2",
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@types/body-parser": "^1.19.3",
     "@types/express": "^4.17.18",
     "@types/node-fetch": "^2.6.6",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.10"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }
