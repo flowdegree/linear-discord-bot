@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  
+  bot:
+    container_name: linear-discord-bot
+    image: "ghcr.io/flowdegree/linear-discord-bot"
+    environment:
+      - DISCORD_WEBHOOK_URL
+      - PORT
+      - TZ
