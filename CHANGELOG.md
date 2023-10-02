@@ -1,5 +1,11 @@
 # @flowdegree/linear-discord-bot
 
+## 1.2.0
+
+### Minor Changes
+
+- Ready for Docker
+
 ## 1.1.0
 
 ### Minor Changes

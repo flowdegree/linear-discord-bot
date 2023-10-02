@@ -1,6 +1,6 @@
 {
   "name": "@flowdegree/linear-discord-bot",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Listen for Linear App events and updates with Discord.",
   "main": "index.js",
   "scripts": {
