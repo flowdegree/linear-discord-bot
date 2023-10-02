@@ -46,6 +46,10 @@ export interface Data {
   userId?: string;
 }
 
+export interface IssueCache {
+  [url: string]: string
+}
+
 export interface Label {
   id: string;
   name: string;

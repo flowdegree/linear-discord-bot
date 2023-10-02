@@ -13,7 +13,7 @@ You will need to put your own [Discord webhook](https://support.discord.com/hc/e
 **For deployment, either:**
 
 - setup a [Heroku](https://www.heroku.com/) account and follow this [simple tutorial](https://www.youtube.com/watch?v=MxfxiR8TVNU&t=310s).
-- Or, run the docker image
+- Or, run the docker image `docker run -d -p 3000:3000 ghcr.io/flowdegree/linear-app-discord:latest`
 
 ## Helpful Resources
 
