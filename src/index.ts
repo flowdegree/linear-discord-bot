@@ -1,12 +1,15 @@
-import 'dotenv/config';
-
-import express, { Request } from 'express';
-import { IncomingLinearWebhookPayload } from './types';
 import fetch from 'node-fetch';
+import express, { Request } from 'express';
+
+import { env } from './config';
+import { getId, getPriorityValue, prettifyLabels } from './utils';
+import { IncomingLinearWebhookPayload } from './types';
 
 const app = express();
 
-const port: number = parseInt(process.env.PORT ?? '3000');
+const port: number = parseInt(env.PORT ?? '3000');
+
+
 
 app.use(express.json());
 
@@ -20,10 +23,10 @@ app.post<Request['params'], unknown, IncomingLinearWebhookPayload>('/linear', as
   res.sendStatus(200);
 });
 
-app.listen(port, () => console.log(`Webhook consumer listening on port ${port}!`));
+
 
 function newIssue(payload: IncomingLinearWebhookPayload) {
-  return fetch(process.env.WEBHOOK!, {
+  return fetch(env.DISCORD_WEBHOOK_URL!, {
     method: 'POST',
     body: JSON.stringify({
       embeds: [
@@ -62,37 +65,7 @@ function newIssue(payload: IncomingLinearWebhookPayload) {
   });
 }
 
-/**
- * Get the Priority Value translated
- * @param priority number for priority
- */
-function getPriorityValue(priority: NonNullable<IncomingLinearWebhookPayload['data']['priority']>) {
-  switch (priority) {
-    case 0:
-      return 'None';
-    case 1:
-      return 'Urgent';
-    case 2:
-      return 'High';
-    case 3:
-      return 'Medium';
-    case 4:
-      return 'Low';
-  }
-}
 
-/**
- * Get the task ID from url
- * @param link task url
- */
-function getId(link: string) {
-  return link.split('/')[5];
-}
 
-/**
- * Formats and prettifies label(s)
- * @param labels connected labels
- */
-function prettifyLabels(labels: NonNullable<IncomingLinearWebhookPayload['data']['labels']>) {
-  return labels.map((label) => label.name).join(', ');
-}
+
+app.listen(port, () => console.log(`Webhook consumer listening on port ${port}!`));
