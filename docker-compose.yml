@@ -1,9 +1,9 @@
-version: '3.4'
+version: '3.8'
+
 services:
-  
   bot:
+    image: "ghcr.io/flowdegree/linear-discord-bot:latest"
     container_name: linear-discord-bot
-    image: "ghcr.io/flowdegree/linear-discord-bot"
     ports:
     - "${EXTERNAL_SERVER_PORT}:${PORT}"
     env_file: "stack.env"
