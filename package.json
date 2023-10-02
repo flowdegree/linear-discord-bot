@@ -1,6 +1,6 @@
 {
-  "name": "linear-app-discord",
-  "version": "1.0.1",
+  "name": "@flowdegree/linear-discord-bot",
+  "version": "1.1.0",
   "description": "Listen for Linear App events and updates with Discord.",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ezolla/linear-app-discord.git"
+    "url": "git+https://github.com/flowdegree/linear-app-discord.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "Linear",
@@ -20,24 +23,28 @@
     "Issue Tracking",
     "Monitoring"
   ],
-  "author": "Ethan Zoller",
+  "authors": [
+    "Flowdegree",
+    "Ethan Zoller"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ezolla/linear-app-discord/issues"
+    "url": "https://github.com/flowdegree/linear-app-discord/issues"
   },
-  "homepage": "https://github.com/ezolla/linear-app-discord#readme",
+  "homepage": "https://github.com/flowdegree/linear-app-discord#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.1",
-    "util": "^0.12.3",
-    "webhook-discord": "^3.7.4"
+    "dotenv": "^8.6.0",
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0",
+    "util": "^0.12.5",
+    "webhook-discord": "^3.7.8"
   },
   "devDependencies": {
-    "@types/body-parser": "^1.19.0",
-    "@types/express": "^4.17.7",
-    "@types/node-fetch": "^2.5.7",
+    "@changesets/cli": "^2.26.2",
+    "@types/body-parser": "^1.19.3",
+    "@types/express": "^4.17.18",
+    "@types/node-fetch": "^2.6.6",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.10"
   }
 }
