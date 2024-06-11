@@ -31,4 +31,12 @@ app.post<Request['params'], unknown, IncomingLinearWebhookPayload>('/linear', as
   }
 });
 
+// get request to main directory prints hi
+app.get('/', (req, res) => {
+  res.send('Hi');
+});
+
+
+
+
 app.listen(port, () => console.log(`Webhook consumer listening on port ${port}!`));
